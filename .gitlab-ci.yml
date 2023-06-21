@@ -1,11 +1,6 @@
 # define a job for building the containers
 build-container:
   stage: deploy
-  # run parallel builds for the desired architectures
-  parallel:
-    matrix:
-      - ARCH: amd64
-      - ARCH: arm64
   tags:
     # run each build on a suitable, preconfigured runner (must match the target architecture)
     - runner-${ARCH}
