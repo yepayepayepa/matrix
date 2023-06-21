@@ -1,9 +1,6 @@
 # define a job for building the containers
 build-container:
   stage: deploy
-  tags:
-    # run each build on a suitable, preconfigured runner (must match the target architecture)
-    - runner-${ARCH}
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
