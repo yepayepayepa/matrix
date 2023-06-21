@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "blessed": "^0.1.81"
+  },
+  "name": "matrix",
+  "version": "1.0.0",
+  "main": "matrix.js",
+  "scripts": {
+    "start": "node src/matrix.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.lkmx.io:playground/matrix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
