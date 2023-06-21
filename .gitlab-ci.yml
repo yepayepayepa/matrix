@@ -1,6 +1,6 @@
 # define a job for building the containers
 build-container:
-  stage: container-build
+  stage: deploy
   # run parallel builds for the desired architectures
   parallel:
     matrix:
