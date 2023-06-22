@@ -1,19 +1,19 @@
 {
-  "dependencies": {
-    "blessed": "^0.1.81"
-  },
-  "name": "matrix",
-  "version": "1.0.0",
-  "main": "matrix.js",
+  "name": "@playground/the-matrix",
+  "version": "0.1.0",
+  "main": "src/the-matrix.js",
   "scripts": {
-    "start": "node src/matrix.js"
+    "start": "node src/the-matrix.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@code.lkmx.io:playground/matrix.git"
+    "url": "git@code.lkmx.io:playground/the-matrix.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "victor.valle@lkmx.io",
   "license": "ISC",
-  "description": ""
+  "description": "This is a simple code that renders The Matrix code rainfall.",
+  "dependencies": {
+    "blessed": "^0.1.81"
+  }
 }
