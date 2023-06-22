@@ -15,4 +15,4 @@ COPY ./src/ /app/src/
 RUN npm install blessed
 
 # The command to start our app.
-CMD [ "node", "src/matrix.js" ]
+CMD [ "node", "src/the-matrix.js" ]
