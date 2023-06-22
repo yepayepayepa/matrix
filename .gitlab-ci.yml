@@ -1,18 +1,4 @@
-build-container-latest:
-  stage: deploy
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  script:
-    - >-
-      /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
-      --destination "${CI_REGISTRY_IMAGE}/${CI_PROJECT_NAME}:latest"
-  only:
-    - main
-
-build-container-tag:
+build-container:
   stage: deploy
   image:
     name: gcr.io/kaniko-project/executor:debug
@@ -32,7 +18,6 @@ npm-publish:
   script:
     - echo "@playground:registry=https://code.lkmx.io/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
     - echo "//code.lkmx.io/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
-    - cat .npmrc
     - npm publish
   only:
     - tags
