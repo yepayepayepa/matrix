@@ -1,12 +1,27 @@
-build-container:
+build-container-latest:
   stage: deploy
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   script:
-    # build the container image for the current arch using kaniko
     - >-
       /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
-      --destination "${CI_REGISTRY_IMAGE}"
+      --destination "${CI_REGISTRY_IMAGE}/${CI_PROJECT_NAME}:latest"
+  only:
+    - main
+
+build-container-tag:
+  stage: deploy
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}/${CI_PROJECT_NAME}:${CI_COMMIT_REF_NAME}"
+  only:
+    - tags
