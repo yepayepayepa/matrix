@@ -10,4 +10,4 @@ build-container:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       # push the image to the GitLab container registry, add the current branch as tag.
-      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}"
+      --destination "${CI_REGISTRY_IMAGE}"
